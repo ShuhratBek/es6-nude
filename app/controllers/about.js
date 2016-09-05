@@ -1,6 +1,6 @@
-import { NavBar } from './navbar';
+import NavBar from '../components/navbar';
 
-class AboutPageController {
+class AboutController {
     constructor() {
         this.navBar = new NavBar();
     }
@@ -8,10 +8,9 @@ class AboutPageController {
     render()  {
         return `
         ${this.navBar.render()}
-        <hr>
         <h1 class="text-center">About Us</h1>
         `
     };
 }
 
-export default AboutPageController;
+export default AboutController;
