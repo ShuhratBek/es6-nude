@@ -1,5 +1,5 @@
 class SectionBar {
-    constructor() {
+    constructor(section) {
         this.sections = [
             'home',
             'opinion',
@@ -23,11 +23,12 @@ class SectionBar {
             'food',
             'travel'
         ];
+        this.section = section;
     }
 
     renderSection() {
         return this.sections.map((section) => {
-            return `<a href="#/stories/${section}" class="list-group-item text-capitalize">${section}</a>`;
+            return `<a href="#/stories/${section}" class="list-group-item text-capitalize${section === this.section ? ' active' : ''}">${section}</a>`;
         }).join('');
     }
 

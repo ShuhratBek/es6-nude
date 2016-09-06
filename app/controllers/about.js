@@ -1,16 +1,12 @@
-import NavBar from '../components/navbar';
+import BaseClass from '../base-class';
 
-class AboutController {
+class AboutController extends BaseClass {
     constructor() {
-        this.navBar = new NavBar();
+        super();
+        this.template = `
+            <h1 class="text-center">About Us</h1>
+        `;
     }
-
-    render()  {
-        return `
-        ${this.navBar.render()}
-        <h1 class="text-center">About Us</h1>
-        `
-    };
 }
 
 export default AboutController;
