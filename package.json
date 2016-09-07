@@ -2,12 +2,14 @@
   "name": "es6-nude",
   "version": "1.0.0",
   "description": "",
-  "main": "ex6-nude.js",
+  "main": "index.html",
+  "repository": "https://github.com/ShuhratBek/es6-nude",
   "scripts": {
     "dev": "node node_modules/webpack/bin/webpack.js --watch",
-    "build": "node node_modules/webpack/bin/webpack.js -p"
+    "build": "node node_modules/webpack/bin/webpack.js -p",
+    "postinstall": "npm run build"
   },
-  "author": "Shukhratbek Mamadaliev",
+  "author": "shuhratbek",
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.7.2",
@@ -16,5 +18,9 @@
     "webpack": "^1.12.14",
     "bootstrap": "^3.3.7",
     "director": "^1.2.8"
+  },
+  "engines": {
+    "node": "^4.4.x",
+    "npm": "^3.9.x"
   }
 }
