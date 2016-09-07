@@ -5,6 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/ShuhratBek/es6-nude",
   "scripts": {
+    "start": "npm run build && node index.js",
     "dev": "node node_modules/webpack/bin/webpack.js --watch",
     "build": "node node_modules/webpack/bin/webpack.js -p",
     "postinstall": "npm run build"
