@@ -1,5 +1,5 @@
 module.exports = {
-    entry: ['es6-promise', 'whatwg-fetch', './app/app.js'],
+    entry: ['babel-polyfill', 'whatwg-fetch', './app/app.js'],
     output: {filename: './app.js'},
     devtool: 'source-map',
     watchOptions: {
