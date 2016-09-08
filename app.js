@@ -46,15 +46,15 @@
 
 	"use strict";
 	
-	var _home = __webpack_require__(12);
+	var _home = __webpack_require__(1);
 	
 	var _home2 = _interopRequireDefault(_home);
 	
-	var _stories = __webpack_require__(11);
+	var _stories = __webpack_require__(5);
 	
 	var _stories2 = _interopRequireDefault(_stories);
 	
-	var _about = __webpack_require__(13);
+	var _about = __webpack_require__(7);
 	
 	var _about2 = _interopRequireDefault(_about);
 	
@@ -102,13 +102,91 @@
 	router.setRoute('/');
 
 /***/ },
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _baseClass = __webpack_require__(2);
+	
+	var _baseClass2 = _interopRequireDefault(_baseClass);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var HomeController = function (_BaseClass) {
+	    _inherits(HomeController, _BaseClass);
+	
+	    function HomeController() {
+	        _classCallCheck(this, HomeController);
+	
+	        var _this = _possibleConstructorReturn(this, (HomeController.__proto__ || Object.getPrototypeOf(HomeController)).call(this));
+	
+	        _this.template = '\n        <div class="container-fluid">\n            <div class="jumbotron">\n              <h1>Welcome to ES6-Nude!</h1>\n              <p>SPA without framework</p>\n              <p><a class="btn btn-primary btn-lg" href="#/stories/home" role="button">Stories</a></p>\n            </div>\n        </div>';
+	        return _this;
+	    }
+	
+	    return HomeController;
+	}(_baseClass2.default);
+	
+	exports.default = HomeController;
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _navbar = __webpack_require__(3);
+	
+	var _navbar2 = _interopRequireDefault(_navbar);
+	
+	var _footer = __webpack_require__(4);
+	
+	var _footer2 = _interopRequireDefault(_footer);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var BaseClass = function () {
+	    function BaseClass() {
+	        _classCallCheck(this, BaseClass);
+	
+	        this.navBar = new _navbar2.default();
+	        this.footer = new _footer2.default();
+	        this.template = '';
+	    }
+	
+	    _createClass(BaseClass, [{
+	        key: 'render',
+	        value: function render() {
+	            return '\n        ' + this.navBar.render() + '\n        ' + this.template + '\n        ' + this.footer.render();
+	        }
+	    }]);
+	
+	    return BaseClass;
+	}();
+	
+	exports.default = BaseClass;
+
+/***/ },
+/* 3 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -139,11 +217,10 @@
 	exports.default = NavBar;
 
 /***/ },
-/* 8 */,
-/* 9 */
+/* 4 */
 /***/ function(module, exports) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -153,38 +230,25 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	var SectionBar = function () {
-	    function SectionBar(section) {
-	        _classCallCheck(this, SectionBar);
-	
-	        this.sections = ['home', 'opinion', 'world', 'national', 'politics', 'upshot', 'nyregion', 'business', 'technology', 'science', 'health', 'sports', 'arts', 'books', 'movies', 'theater', 'sundayreview', 'fashion', 'tmagazine', 'food', 'travel'];
-	        this.section = section;
+	var Footer = function () {
+	    function Footer() {
+	        _classCallCheck(this, Footer);
 	    }
 	
-	    _createClass(SectionBar, [{
-	        key: 'renderSection',
-	        value: function renderSection() {
-	            var _this = this;
-	
-	            return this.sections.map(function (section) {
-	                return '<a href="#/stories/' + section + '" class="list-group-item text-capitalize' + (section === _this.section ? ' active' : '') + '">' + section + '</a>';
-	            }).join('');
-	        }
-	    }, {
-	        key: 'render',
+	    _createClass(Footer, [{
+	        key: "render",
 	        value: function render() {
-	            return '\n            <div class="list-group">\n              ' + this.renderSection() + '\n            </div>';
+	            return "\n            <div class=\"container text-center\">\n                Build with ♥ by the ShuhratBek ©2016\n            </div>\n        ";
 	        }
 	    }]);
 	
-	    return SectionBar;
+	    return Footer;
 	}();
 	
-	exports.default = SectionBar;
+	exports.default = Footer;
 
 /***/ },
-/* 10 */,
-/* 11 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -195,11 +259,11 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _baseClass = __webpack_require__(15);
+	var _baseClass = __webpack_require__(2);
 	
 	var _baseClass2 = _interopRequireDefault(_baseClass);
 	
-	var _sectionBar = __webpack_require__(9);
+	var _sectionBar = __webpack_require__(6);
 	
 	var _sectionBar2 = _interopRequireDefault(_sectionBar);
 	
@@ -253,8 +317,8 @@
 	exports.default = StoriesController;
 
 /***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
+/* 6 */
+/***/ function(module, exports) {
 
 	'use strict';
 	
@@ -262,37 +326,41 @@
 	    value: true
 	});
 	
-	var _baseClass = __webpack_require__(15);
-	
-	var _baseClass2 = _interopRequireDefault(_baseClass);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	var SectionBar = function () {
+	    function SectionBar(section) {
+	        _classCallCheck(this, SectionBar);
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var HomeController = function (_BaseClass) {
-	    _inherits(HomeController, _BaseClass);
-	
-	    function HomeController() {
-	        _classCallCheck(this, HomeController);
-	
-	        var _this = _possibleConstructorReturn(this, (HomeController.__proto__ || Object.getPrototypeOf(HomeController)).call(this));
-	
-	        _this.template = '\n        <div class="container-fluid">\n            <div class="jumbotron">\n              <h1>Welcome to ES6-Nude!</h1>\n              <p>SPA without framework</p>\n              <p><a class="btn btn-primary btn-lg" href="#/stories/home" role="button">Stories</a></p>\n            </div>\n        </div>';
-	        return _this;
+	        this.sections = ['home', 'opinion', 'world', 'national', 'politics', 'upshot', 'nyregion', 'business', 'technology', 'science', 'health', 'sports', 'arts', 'books', 'movies', 'theater', 'sundayreview', 'fashion', 'tmagazine', 'food', 'travel'];
+	        this.section = section;
 	    }
 	
-	    return HomeController;
-	}(_baseClass2.default);
+	    _createClass(SectionBar, [{
+	        key: 'renderSection',
+	        value: function renderSection() {
+	            var _this = this;
 	
-	exports.default = HomeController;
+	            return this.sections.map(function (section) {
+	                return '<a href="#/stories/' + section + '" class="list-group-item text-capitalize' + (section === _this.section ? ' active' : '') + '">' + section + '</a>';
+	            }).join('');
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return '\n            <div class="list-group">\n              ' + this.renderSection() + '\n            </div>';
+	        }
+	    }]);
+	
+	    return SectionBar;
+	}();
+	
+	exports.default = SectionBar;
 
 /***/ },
-/* 13 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -301,7 +369,7 @@
 	    value: true
 	});
 	
-	var _baseClass = __webpack_require__(15);
+	var _baseClass = __webpack_require__(2);
 	
 	var _baseClass2 = _interopRequireDefault(_baseClass);
 	
@@ -329,82 +397,6 @@
 	}(_baseClass2.default);
 	
 	exports.default = AboutController;
-
-/***/ },
-/* 14 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	var Footer = function () {
-	    function Footer() {
-	        _classCallCheck(this, Footer);
-	    }
-	
-	    _createClass(Footer, [{
-	        key: "render",
-	        value: function render() {
-	            return "\n            <div class=\"container text-center\">\n                Build with ♥ by the ShuhratBek ©2016\n            </div>\n        ";
-	        }
-	    }]);
-	
-	    return Footer;
-	}();
-	
-	exports.default = Footer;
-
-/***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _navbar = __webpack_require__(7);
-	
-	var _navbar2 = _interopRequireDefault(_navbar);
-	
-	var _footer = __webpack_require__(14);
-	
-	var _footer2 = _interopRequireDefault(_footer);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	var BaseClass = function () {
-	    function BaseClass() {
-	        _classCallCheck(this, BaseClass);
-	
-	        this.navBar = new _navbar2.default();
-	        this.footer = new _footer2.default();
-	        this.template = '';
-	    }
-	
-	    _createClass(BaseClass, [{
-	        key: 'render',
-	        value: function render() {
-	            return '\n        ' + this.navBar.render() + '\n        ' + this.template + '\n        ' + this.footer.render();
-	        }
-	    }]);
-	
-	    return BaseClass;
-	}();
-	
-	exports.default = BaseClass;
 
 /***/ }
 /******/ ]);

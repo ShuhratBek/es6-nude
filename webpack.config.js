@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './app/app.js',
+    entry: ['es6-promise', 'whatwg-fetch', './app/app.js'],
     output: {filename: './app.js'},
     devtool: 'source-map',
     watchOptions: {
